@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
-use Validator;
 use App\Models\Meal;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\API\ImageController;
 
 class MealController extends Controller
@@ -201,9 +202,9 @@ class MealController extends Controller
         return response()->json(['message' => 'Can assign menu to a meal, Meal not found']);
     }
     // Méthode pour désassigner un rôle à un utilisateur
-    public function detachMenu(int $id, array $ids)
+    public function detachMenu(int $id, $ids)
     {
-        $Ids = json_decode($Ids, true);
+        $Ids = json_decode($ids, true);
         $mealExist = Meal::where('id', $id)->exists();
         if($mealExist){
             $meal = Meal::find($id);

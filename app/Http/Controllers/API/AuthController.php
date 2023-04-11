@@ -7,7 +7,6 @@ use App\Models\User;
 use Tymon\JWTAuth\JWTAuth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-// use Tymon\JWTAuth\Facades\JWTAuth; // Import de la façade JWTAuth
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
